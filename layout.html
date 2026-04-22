@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <title>Layout Responsivo</title>
+
+    <style>
+        /* CONTENEDOR GENERAL */
+        .wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .contenedor {
+            width: 380px;
+            height: 750px;
+            transform: scale(0.9);
+            transform-origin: top center;
+            border: 6px solid purple;
+            background: white;
+        }
+
+        /* SECCIONES */
+        .seccion {
+            height: 25%;
+            border: 4px solid black;
+        }
+
+        .caja {
+            border: 3px solid black;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .verde { background: #e6f2df; }
+        .azul { background: #dfe8f6; }
+        .amarillo { background: #fff1cc; }
+        .rosado { background: #fde6dc; }
+
+        .mini { height: 33.33%; }
+        .barra { height: 20%; }
+
+        /* =====================
+           RESPONSIVE BREAKPOINTS
+        ====================== */
+
+        /* TABLET */
+        @media (max-width: 992px) {
+            .contenedor {
+                transform: scale(0.8);
+            }
+        }
+
+        /* CELULAR */
+        @media (max-width: 576px) {
+            .contenedor {
+                width: 300px;
+                height: 600px;
+                transform: scale(0.75);
+            }
+
+            .caja {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <div class="container-fluid contenedor p-0">
+
+        <!-- SECCIÓN 1 -->
+        <div class="row seccion g-1">
+            <div class="col-12">
+                <div class="caja verde mb-1">CAJA</div>
+                <div class="caja azul mb-1">CAJA</div>
+                <div class="caja amarillo">CAJA</div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 2 -->
+        <div class="row seccion g-1">
+            <div class="col-8">
+                <div class="caja rosado">CAJA</div>
+            </div>
+            <div class="col-4 d-flex flex-column gap-1">
+                <div class="caja rosado mini">CAJA</div>
+                <div class="caja rosado mini">CAJA</div>
+                <div class="caja rosado mini">CAJA</div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 3 -->
+        <div class="row seccion g-1">
+            <div class="col-8">
+                <div class="caja azul">CAJA</div>
+            </div>
+            <div class="col-4 d-flex flex-column gap-1">
+                <div class="caja azul mini">CAJA</div>
+                <div class="caja azul mini">CAJA</div>
+                <div class="caja azul mini">CAJA</div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 4 -->
+        <div class="row seccion g-1">
+            <div class="col-12 d-flex flex-column gap-1">
+
+                <div class="caja verde barra">CAJA</div>
+
+                <div class="row flex-grow-1 g-1">
+                    <div class="col-3"><div class="caja verde">CAJA</div></div>
+                    <div class="col-3"><div class="caja verde">CAJA</div></div>
+                    <div class="col-3"><div class="caja verde">CAJA</div></div>
+                    <div class="col-3"><div class="caja verde">CAJA</div></div>
+                </div>
+
+                <div class="caja verde barra">CAJA</div>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
